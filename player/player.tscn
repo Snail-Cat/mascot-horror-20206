@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cra1o42ydg1fi"]
+
+[ext_resource type="Script" uid="uid://dbp4k7ly8a0qv" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="Texture2D" uid="uid://b1fmpigo8tbpi" path="res://mockup/mockup_player.png" id="2_g1dw6"]
+[ext_resource type="Script" uid="uid://b5jr5qc0lxppc" path="res://util/runtime_enabler.gd" id="3_g1dw6"]
+[ext_resource type="Script" uid="uid://cc4fxn06eev2b" path="res://player/interaction_detector.gd" id="4_yw30f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g1dw6"]
+radius = 8.0
+height = 28.0
+
+[sub_resource type="Gradient" id="Gradient_rkbax"]
+offsets = PackedFloat32Array(0, 0.24096386, 0.67469877)
+colors = PackedColorArray(0.7607843, 0.8666667, 0.75686276, 1, 0.7607843, 0.8666667, 0.75686276, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g1dw6"]
+gradient = SubResource("Gradient_rkbax")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qjkh3"]
+radius = 73.0
+
+[node name="Player" type="CharacterBody2D" unique_id=156382088]
+y_sort_enabled = true
+script = ExtResource("1_rkbax")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1603613327]
+light_mask = 4
+position = Vector2(-6, -49)
+texture = ExtResource("2_g1dw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=765628888]
+position = Vector2(0, -4)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_g1dw6")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=923012669]
+visible = false
+position = Vector2(0, -7)
+range_item_cull_mask = 7
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_g1dw6")
+
+[node name="RuntimeEnabler" type="Node" parent="PointLight2D" unique_id=991829283]
+script = ExtResource("3_g1dw6")
+metadata/_custom_type_script = "uid://b5jr5qc0lxppc"
+
+[node name="InteractionDetector" type="Area2D" parent="." unique_id=13955611]
+script = ExtResource("4_yw30f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionDetector" unique_id=49913016]
+position = Vector2(0, -25)
+shape = SubResource("CircleShape2D_qjkh3")
