@@ -6,6 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_yw30f"]
 
 [node name="Player" type="CharacterBody2D" unique_id=156382088]
+y_sort_enabled = true
 script = ExtResource("1_rkbax")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1603613327]
