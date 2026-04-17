@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dbp4k7ly8a0qv" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://b1fmpigo8tbpi" path="res://mockup/mockup_player.png" id="2_g1dw6"]
 [ext_resource type="Script" uid="uid://b5jr5qc0lxppc" path="res://util/runtime_enabler.gd" id="3_g1dw6"]
+[ext_resource type="Script" uid="uid://cc4fxn06eev2b" path="res://player/interaction_detector.gd" id="4_yw30f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g1dw6"]
 radius = 8.0
@@ -18,6 +19,9 @@ width = 512
 height = 512
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qjkh3"]
+radius = 73.0
 
 [node name="Player" type="CharacterBody2D" unique_id=156382088]
 y_sort_enabled = true
@@ -43,3 +47,10 @@ texture = SubResource("GradientTexture2D_g1dw6")
 [node name="RuntimeEnabler" type="Node" parent="PointLight2D" unique_id=991829283]
 script = ExtResource("3_g1dw6")
 metadata/_custom_type_script = "uid://b5jr5qc0lxppc"
+
+[node name="InteractionDetector" type="Area2D" parent="." unique_id=13955611]
+script = ExtResource("4_yw30f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionDetector" unique_id=49913016]
+position = Vector2(0, -25)
+shape = SubResource("CircleShape2D_qjkh3")

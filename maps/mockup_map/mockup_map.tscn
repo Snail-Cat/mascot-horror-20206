@@ -3,6 +3,8 @@
 [ext_resource type="TileSet" uid="uid://b5mgwjm554i0" path="res://maps/mockup_map/mockup_tileset.tres" id="1_e7g3f"]
 [ext_resource type="PackedScene" uid="uid://cra1o42ydg1fi" path="res://player/player.tscn" id="1_q1k15"]
 [ext_resource type="Script" uid="uid://b5jr5qc0lxppc" path="res://util/runtime_enabler.gd" id="3_a4pk8"]
+[ext_resource type="PackedScene" uid="uid://cbqo8v6j4qk37" path="res://interactable/interactable_area.tscn" id="4_0w2j5"]
+[ext_resource type="Script" uid="uid://35dh8yuu4xlt" path="res://interactable/inspect_interactable.gd" id="5_fdedp"]
 
 [node name="MockupMap" type="Node2D" unique_id=1890274910]
 y_sort_enabled = true
@@ -21,7 +23,7 @@ tile_set = ExtResource("1_e7g3f")
 [node name="Blocks" type="TileMapLayer" parent="." unique_id=61418298]
 light_mask = 2
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD5/wEAAAAAAAUAAAD7/wEAAAAAAAUAAAD1//r/AAABAAQAAAD5//r/AAABAAQAAAD5//j/AAABAAQAAAD4//j/AAABAAQAAAD6//v/AAACAAQAAAD6//j/AAACAAQAAAAAAAMAAAACAAQAAAD6/wEAAAABAAQAAAD6//7/AAACAAQAAAD7//7/AAACAAQAAAD8//7/AAACAAQAAAD0//7/AAACAAQAAAD1//7/AAACAAQAAAD1/wEAAAAAAAUAAAD3/wMAAAAAAAUAAAA=")
+tile_map_data = PackedByteArray("AAD5/wEAAAAAAAUAAAD7/wEAAAAAAAUAAAD1//r/AAABAAQAAAD5//r/AAABAAQAAAD5//j/AAABAAQAAAD4//j/AAABAAQAAAD6//v/AAACAAQAAAD6//j/AAACAAQAAAAAAAMAAAACAAQAAAD6/wEAAAABAAQAAAD6//7/AAACAAQAAAD7//7/AAACAAQAAAD8//7/AAACAAQAAAD0//7/AAACAAQAAAD1//7/AAACAAQAAAD1/wEAAAAAAAUAAAD3/wMAAAAAAAUAAAD8/wEAAAAAAAkAAAA=")
 tile_set = ExtResource("1_e7g3f")
 
 [node name="WallTops" type="TileMapLayer" parent="." unique_id=1622874426]
@@ -46,3 +48,9 @@ color = Color(0.112413146, 0.07076844, 0.038716648, 1)
 [node name="RuntimeEnabler" type="Node" parent="CanvasModulate" unique_id=1698801049]
 script = ExtResource("3_a4pk8")
 metadata/_custom_type_script = "uid://b5jr5qc0lxppc"
+
+[node name="InteractableArea" parent="." unique_id=2071845169 instance=ExtResource("4_0w2j5")]
+position = Vector2(-448.00003, 251)
+scale = Vector2(2, 2)
+script = ExtResource("5_fdedp")
+text = "You see this object"
