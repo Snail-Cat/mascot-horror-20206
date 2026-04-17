@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 @export var _speed := 300
 var _flipped := false
+@onready var _sprite := $Sprite
 
 
 func _physics_process(_delta):
@@ -11,10 +12,10 @@ func _physics_process(_delta):
   velocity = direction * _speed
 
   if direction.x < 0 and !_flipped:
-    self.transform.x *= -1
+    _sprite.transform.x *= -1
     _flipped = true
   elif direction.x > 0 and _flipped:
-    self.transform.x *= -1
+    _sprite.transform.x *= -1
     _flipped = false
 
   move_and_slide()
