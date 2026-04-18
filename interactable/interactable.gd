@@ -6,8 +6,8 @@ const GROUP_NAME := "INTERACTABLE"
 
 
 func _ready():
-  add_to_group(GROUP_NAME)
+	add_to_group(GROUP_NAME)
 
 
 func interact():
-  print("interacted")
+	print("interacted")

@@ -5,4 +5,4 @@ extends Node
 
 
 func _ready():
-  get_parent().show()
+	get_parent().show()
