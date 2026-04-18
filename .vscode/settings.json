@@ -1,0 +1,16 @@
+{
+  "godotTools.editorPath.godot4": "c:\\Program Files\\Godot\\4.3\\Godot.exe",
+  "editor.defaultFormatter": "geequlim.godot-tools",
+  "editor.detectIndentation": true,
+  "editor.insertSpaces": false,
+  "workbench.colorTheme": "Noctis Minimus",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "files.exclude": {
+    "**/*.tscn": true,
+    "**/*.uid": true,
+    "**/*.import": true,
+    "**/*.tres": true,
+    "**/*.png": true
+  }
+}
