@@ -24,9 +24,6 @@ fill_from = Vector2(0.5, 0.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_qjkh3"]
 radius = 73.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boad6"]
-bg_color = Color(0.12156863, 0.48235294, 0.12156863, 1)
-
 [node name="Player" type="CharacterBody2D" unique_id=156382088]
 y_sort_enabled = true
 script = ExtResource("1_rkbax")
@@ -61,61 +58,7 @@ shape = SubResource("CircleShape2D_qjkh3")
 
 [node name="Battery" type="Node" parent="." unique_id=737240493 node_paths=PackedStringArray("battery_bar1", "battery_bar2", "battery_bar3", "point_light")]
 script = ExtResource("5_qjkh3")
-battery_bar1 = NodePath("../CanvasLayer/Control/BatteryBar1")
-battery_bar2 = NodePath("../CanvasLayer/Control/BatteryBar3")
-battery_bar3 = NodePath("../CanvasLayer/Control/BatteryBar2")
+battery_bar1 = NodePath("")
+battery_bar2 = NodePath("")
+battery_bar3 = NodePath("")
 point_light = NodePath("../PointLight2D")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1227453626]
-
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=444190376]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="BatteryBar1" type="ProgressBar" parent="CanvasLayer/Control" unique_id=445622138]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -27.0
-offset_right = 51.0
-offset_bottom = 65.0
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.7213019, 0.721302, 0.72130287, 1)
-theme_override_styles/fill = SubResource("StyleBoxFlat_boad6")
-rounded = true
-fill_mode = 3
-
-[node name="BatteryBar3" type="ProgressBar" parent="CanvasLayer/Control" unique_id=1923959873]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 60.0
-offset_top = -28.0
-offset_right = 111.0
-offset_bottom = 64.0
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.7213019, 0.721302, 0.72130287, 1)
-theme_override_styles/fill = SubResource("StyleBoxFlat_boad6")
-value = 100.0
-rounded = true
-fill_mode = 3
-
-[node name="BatteryBar2" type="ProgressBar" parent="CanvasLayer/Control" unique_id=2052943799]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 120.0
-offset_top = -26.0
-offset_right = 171.0
-offset_bottom = 66.0
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.7213019, 0.721302, 0.72130287, 1)
-theme_override_styles/fill = SubResource("StyleBoxFlat_boad6")
-value = 100.0
-rounded = true
-fill_mode = 3

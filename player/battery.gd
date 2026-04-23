@@ -1,28 +1,29 @@
 class_name Battery
 extends Node
 
-
-@export var battery_bar1: ProgressBar 
-@export var battery_bar2: ProgressBar  
-@export var battery_bar3: ProgressBar  
 @export var point_light: PointLight2D
 
-var current_level_duration := 100.0
+var battery_count := 1 # bateria atual
+var max_battery_count := 3 # bateria máxima
 var current_level := 2
+var duration_modifier1 := 6
+var duration_modifier2 := 4
+var duration_modifier3 := 3
+var current_level_duration := 100.0
+var light_scale_lv2 := 1.0
+var light_scale_lv1 := 0.75
+var light_scale_lv0 := 0.5
 var tween: Tween
 
 
 func _process(delta: float) -> void:
 	#check de qual bateria está funcionando / timer da bateria
 	if current_level == 2:
-		current_level_duration -= delta * 30 # valores modificáveis pra velocidades diferentes
-		battery_bar1.value = current_level_duration # implementa o timer da bateria no node da barraa
-	elif current_level == 1: 
-		current_level_duration -= delta * 20
-		battery_bar2.value = current_level_duration
+		current_level_duration -= delta * duration_modifier1 # valores modificáveis pra velocidades diferentes
+	elif current_level == 1:
+		current_level_duration -= delta * duration_modifier2
 	else:
-		current_level_duration -= delta
-		battery_bar3.value = current_level_duration
+		current_level_duration -= delta * duration_modifier3
 		
 	# possível método de adicionar bateria (precisaria adicionar variável bateria máxima e 
 	# fazer alguns reajustes)
@@ -35,34 +36,30 @@ func _process(delta: float) -> void:
 func _set_current_level():
 	#check se o timer chegou ao final
 	if current_level_duration < 0:
-		current_level -= 1 #diminui o nivel
+		current_level -= 1 # diminui o nivel
 		
 		#if current_level < 0	# checa se a luz acabou
 			#death function (a ser criada)
 		
-		current_level_duration = 100.0 #reinicia o timer 
-	
-	#if current_level_duration > 100:
-		
+		current_level_duration = 100.0 # reinicia o timer
 	
 	if current_level == 2:
 		if tween:
-			tween.kill() #check pra garantir que não tem tweens ativos
+			tween.kill() # check pra garantir que não tem tweens ativos
 	
 		tween = get_tree().create_tween() # criando tree do tween
-		tween.tween_property(point_light, "texture_scale", 1.0, 1.0)  # tween da luz nivel 2
+		tween.tween_property(point_light, "texture_scale", light_scale_lv2, 1.0) # tween da luz nivel 2
 
 	if current_level == 1:
 		if tween:
-			tween.kill() #check pra garantir que não tem tweens ativos
+			tween.kill() # check pra garantir que não tem tweens ativos
 	
 		tween = get_tree().create_tween() # criando tree do tween
-		tween.tween_property(point_light, "texture_scale", 0.75, 1.0)  # tween da luz nivel 1
+		tween.tween_property(point_light, "texture_scale", light_scale_lv1, 1.0) # tween da luz nivel 1
 
 	if current_level == 0:
 		if tween:
-			tween.kill() #check pra garantir que não tem tweens ativos
+			tween.kill() # check pra garantir que não tem tweens ativos
 	
 		tween = get_tree().create_tween() # criando tree do tween
-		tween.tween_property(point_light, "texture_scale", 0.5, 1.0)  # tween da luz nivel 0
-		
+		tween.tween_property(point_light, "texture_scale", light_scale_lv0, 1.0) # tween da luz nivel 0
