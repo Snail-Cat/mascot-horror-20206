@@ -69,8 +69,11 @@ func _process(_delta):
 func _on_timeline_started():
 	_can_move = false
 	_can_interact = false
+	set_process(false)
 
 
 func _on_timeline_ended():
+	await get_tree().process_frame
 	_can_move = true
 	_can_interact = true
+	set_process(true)
