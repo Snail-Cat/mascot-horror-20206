@@ -8,7 +8,7 @@ extends CharacterBody2D
 var _flipped := false
 var _can_move := true
 var _can_interact := true
-var time_pressed := 0.0 # tempo de botão pressionado
+var time_pressed := 0.0 
 var recharge_completed := false
 @onready var _sprite := $Sprite as Sprite2D
 @onready var _interaction_detector := $InteractionDetector as InteractionDetector

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cra1o42ydg1fi" path="res://player/player.tscn" id="1_q1k15"]
 [ext_resource type="Script" uid="uid://b5jr5qc0lxppc" path="res://util/runtime_enabler.gd" id="3_a4pk8"]
 [ext_resource type="PackedScene" uid="uid://dmmdm2tayg8mw" path="res://control/control.tscn" id="4_0w2j5"]
+[ext_resource type="Script" uid="uid://dfhfy7urmrk1n" path="res://pause/pause.gd" id="5_fdedp"]
 [ext_resource type="Script" uid="uid://35dh8yuu4xlt" path="res://interactable/timeline_interactable.gd" id="5_fdedp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l7mbp"]
@@ -60,6 +61,16 @@ metadata/_custom_type_script = "uid://b5jr5qc0lxppc"
 battery = NodePath("../../Player/Battery")
 bar = [NodePath("BatteryBar3"), NodePath("BatteryBar2"), NodePath("BatteryBar1")]
 
+[node name="Button" parent="CanvasLayer/Control" index="4" unique_id=514224117]
+process_mode = 3
+visible = false
+
+[node name="Pause" type="Node" parent="." unique_id=231805595 node_paths=PackedStringArray("pause_button")]
+process_mode = 3
+script = ExtResource("5_fdedp")
+pause_button = NodePath("../CanvasLayer/Control/Button")
+
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="Pause" method="_on_button_pressed"]
 [node name="TimelinetInteractable" type="Area2D" parent="." unique_id=1862463479]
 position = Vector2(312, 407)
 script = ExtResource("5_fdedp")
