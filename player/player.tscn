@@ -10,6 +10,17 @@
 radius = 8.0
 height = 28.0
 
+[sub_resource type="Gradient" id="Gradient_qjkh3"]
+offsets = PackedFloat32Array(0, 0.033834588, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.35555553, 0.35555553, 0.35555553, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g6k8r"]
+gradient = SubResource("Gradient_qjkh3")
+width = 1920
+height = 1920
+fill = 1
+fill_from = Vector2(0.49530515, 0.49530515)
+
 [sub_resource type="Gradient" id="Gradient_rkbax"]
 offsets = PackedFloat32Array(0, 0.24096386, 0.67469877)
 colors = PackedColorArray(0.7607843, 0.8666667, 0.75686276, 1, 0.7607843, 0.8666667, 0.75686276, 1, 0, 0, 0, 1)
@@ -38,14 +49,20 @@ position = Vector2(0, -4)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_g1dw6")
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=923012669]
+[node name="SecondaryLight" type="PointLight2D" parent="." unique_id=859384074]
+energy = 0.35
+range_item_cull_mask = 3
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_g6k8r")
+
+[node name="MainLight" type="PointLight2D" parent="." unique_id=923012669]
 visible = false
 position = Vector2(0, -7)
 range_item_cull_mask = 7
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_g1dw6")
 
-[node name="RuntimeEnabler" type="Node" parent="PointLight2D" unique_id=991829283]
+[node name="RuntimeEnabler" type="Node" parent="MainLight" unique_id=991829283]
 script = ExtResource("3_g1dw6")
 metadata/_custom_type_script = "uid://b5jr5qc0lxppc"
 
@@ -56,9 +73,6 @@ script = ExtResource("4_yw30f")
 position = Vector2(0, -25)
 shape = SubResource("CircleShape2D_qjkh3")
 
-[node name="Battery" type="Node" parent="." unique_id=737240493 node_paths=PackedStringArray("battery_bar1", "battery_bar2", "battery_bar3", "point_light")]
+[node name="Battery" type="Node" parent="." unique_id=737240493 node_paths=PackedStringArray("point_light")]
 script = ExtResource("5_qjkh3")
-battery_bar1 = NodePath("")
-battery_bar2 = NodePath("")
-battery_bar3 = NodePath("")
-point_light = NodePath("../PointLight2D")
+point_light = NodePath("../MainLight")
