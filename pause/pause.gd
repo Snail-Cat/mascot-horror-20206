@@ -1,14 +1,22 @@
 extends Node
 
-@export var pause_button : Button
+@export var ui_controller: UIController
+@export var pause_ui: Control
+@export var pause_button: Button
 
 
 func _process(_delta) -> void:
 	if Input.is_action_just_pressed("pause"):
-		get_tree().paused = !get_tree().paused
-		pause_button.visible = !pause_button.visible
+		_set_paused(!get_tree().paused)
 
 
 func _on_button_pressed() -> void:
-	get_tree().paused = false
-	pause_button.visible = false
+	_set_paused(false)
+
+
+func _set_paused(value: bool):
+	get_tree().paused = value
+	if value:
+		ui_controller.request_visibility(pause_ui)
+	else:
+		ui_controller.reset_default()

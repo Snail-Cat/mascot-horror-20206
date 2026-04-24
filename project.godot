@@ -18,12 +18,14 @@ config/icon="res://icon.svg"
 [autoload]
 
 Dialogic="*uid://ds2q0uclmolvu"
+GlobalState="*uid://dnjev4kcq6fub"
 
 [dialogic]
 
 directories/dch_directory={}
 directories/dtl_directory={
-"hello_world": "res://test/hello_world.dtl"
+"hello_world": "res://test/hello_world.dtl",
+"remove_item_test": "res://test/remove_item_test.dtl"
 }
 layout/style_directory={
 "": "res://dialogic/custom_style.tres",
