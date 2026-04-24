@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://35dh8yuu4xlt" path="res://interactable/timeline_interactable.gd" id="5_fdedp"]
 [ext_resource type="Script" uid="uid://dfhfy7urmrk1n" path="res://pause/pause.gd" id="5_l7mbp"]
 [ext_resource type="PackedScene" uid="uid://thv75egab33h" path="res://ui/pause_ui.tscn" id="6_f0hdj"]
+[ext_resource type="PackedScene" uid="uid://c3tluh81mgca7" path="res://ui/inventory_ui.tscn" id="7_f0hdj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l7mbp"]
 radius = 50.0
@@ -78,6 +79,10 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
+
+[node name="InventoryUI" parent="CanvasLayer" unique_id=244836763 node_paths=PackedStringArray("ui_controller") instance=ExtResource("7_f0hdj")]
+visible = false
+ui_controller = NodePath("..")
 
 [node name="Pause" type="Node" parent="." unique_id=231805595 node_paths=PackedStringArray("ui_controller", "pause_ui", "pause_button")]
 process_mode = 3
