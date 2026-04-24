@@ -1,1 +1,2 @@
 Hello world
+do GlobalState.add_inventory_item("TEST_ITEM")
