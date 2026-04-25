@@ -3,7 +3,6 @@
 [ext_resource type="TileSet" uid="uid://b5mgwjm554i0" path="res://maps/mockup_map/mockup_tileset.tres" id="1_e7g3f"]
 [ext_resource type="PackedScene" uid="uid://cra1o42ydg1fi" path="res://player/player.tscn" id="1_q1k15"]
 [ext_resource type="Script" uid="uid://b5jr5qc0lxppc" path="res://util/runtime_enabler.gd" id="3_a4pk8"]
-[ext_resource type="Texture2D" uid="uid://b1fmpigo8tbpi" path="res://mockup/mockup_player.png" id="3_obxdb"]
 [ext_resource type="PackedScene" uid="uid://dmmdm2tayg8mw" path="res://control/control.tscn" id="4_0w2j5"]
 [ext_resource type="Script" uid="uid://35dh8yuu4xlt" path="res://interactable/timeline_interactable.gd" id="5_fdedp"]
 [ext_resource type="Script" uid="uid://dfhfy7urmrk1n" path="res://pause/pause.gd" id="5_l7mbp"]
@@ -40,13 +39,6 @@ tile_set = ExtResource("1_e7g3f")
 position = Vector2(97, 496)
 battery = NodePath("Battery")
 recharge_bar = NodePath("../CanvasLayer/Control/RechargeBar")
-
-[node name="PointLight2D" type="PointLight2D" parent="Player/Sprite" parent_id_path=PackedInt32Array(156382088, 1603613327) index="0" unique_id=666176371]
-color = Color(0.8992584, 0.8992584, 0.8992584, 1)
-energy = 0.67
-blend_mode = 2
-range_item_cull_mask = 2
-texture = ExtResource("3_obxdb")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=317658340]
 position = Vector2(0, -55.345)
