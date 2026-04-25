@@ -103,7 +103,7 @@ shape = SubResource("CircleShape2D_fdedp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=562244146]
 light_mask = 4
 visibility_layer = 4
-position = Vector2(-1, -6)
+position = Vector2(-1, -56)
 sprite_frames = SubResource("SpriteFrames_p310o")
 animation = &"Avo_monstro"
 
