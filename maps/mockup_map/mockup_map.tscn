@@ -9,12 +9,176 @@
 [ext_resource type="Script" uid="uid://dfhfy7urmrk1n" path="res://pause/pause.gd" id="5_l7mbp"]
 [ext_resource type="PackedScene" uid="uid://thv75egab33h" path="res://ui/pause_ui.tscn" id="6_f0hdj"]
 [ext_resource type="PackedScene" uid="uid://c3tluh81mgca7" path="res://ui/inventory_ui.tscn" id="7_f0hdj"]
+[ext_resource type="PackedScene" uid="uid://c4wycvjk03kqm" path="res://Monster/monstro.tscn" id="monstro4_0w2j5"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fdedp"]
+vertices = PackedVector2Array(107.92969, 2238.0781, 106.96094, 2238.0703, 105.734375, 1926.6875, -1312.9219, 1475.9688, -874, 838, -773, 835, -541.59375, 834.5625, -532.2656, 1473.7578, 648, -357, 641, -570, 791, -577, 1055, -577, 1050, -359, 783, -353, 1056.6484, -602.84375, 1049, 1469.1484, -241, 581, -134, 572, 131, 574, 132, 676, 97, 683, 1047, -312, -1013, 159, -1015.08594, 177.26563, -1017.2969, -317.04688, 891, 619, 1030, 1438, 890.8672, 618.5, 890.8672, 619.5, 1029, 1468, 890.5, 618.1328, 783, -312, 890.5, 619.8672, 649, 1439, 880, -1432, 1059.9609, -1499.75, 1056.7266, -623.96875, 879.8672, -1431.5, 879.5, -1431.1328, 791, -618, 637, -612, 879, -1431, 890, 618, 890, 620, 879.8672, -1432.5, 650, 1469, 1075.6484, 2245.9063, 149.96875, 2238.414, 516, 1472, 132.38281, -357.90625, 131, -477, -1275, -576, 89, -477, -874, 805, -772, 802, 889.5, 619.8672, 517, 1433, -377, 164, -374.14063, -318.1875, 90.82031, -319.01563, 100.75, 541.625, -133, 539, -374, 196, -544, 670, -542.0469, 803.28906, -1045, 578, 97.84375, 803.6328, -137, 801, -1047, -460, -1046.0859, -359.9922, -1047, -360, -538, -1464, -526.34375, -616.25, -1278, -619, -1290.0703, -1492.8828, 90.36719, -357.98438, -373.82813, -358.8047, -373, -469, -414, -458, -1018, -474, -1268, 828, -1268, 791, -415.27344, -318.10938, -419.6875, 164, -515, 164, -620, 164, -519, 196, -618, 194, 143, 556, 132.82813, -319.08594, 645, -320, 889.5, 618.1328, 889.1328, 618.5, 141.16406, 1472.9766, -419.98438, 196, -420, 198, -1044, 545, -377.79688, 164, 140.78125, 1439.75, -1015, 197, -1015.0156, 194, 98.07031, 835.78125, 102.53906, 1471.9688, -497.1953, 1473.6641, -499.42188, 834.4844, -236, 834, -138, 834, -496, -616.1406, -496, -1468, 878.5, -1431.1328, -414.90625, -358.875, -1017.4844, -359.9453, -237, 805, -499.53125, 803.52344, -500, 670, -245, 551, -408, 196, -1041, 197, 878.1328, -1431.5, 878, -1432, 132.52344, 557.7422, 889, 619, 878.1328, -1432.5, 889.1328, 619.5, 879.5, -1432.8672, 102.0625, -1477, 878.5, -1432.8672, -1045.9453, -344.9375, 879, -1433)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11, 12, 13), PackedInt32Array(14, 15, 12, 11), PackedInt32Array(16, 17, 18, 19, 20), PackedInt32Array(21, 12, 15), PackedInt32Array(22, 23, 24), PackedInt32Array(25, 21, 15, 26), PackedInt32Array(21, 25, 27), PackedInt32Array(28, 25, 26), PackedInt32Array(29, 26, 15), PackedInt32Array(21, 27, 30, 31), PackedInt32Array(32, 28, 26, 33), PackedInt32Array(34, 35, 36, 37), PackedInt32Array(38, 37, 36, 39), PackedInt32Array(40, 41, 38, 39, 9), PackedInt32Array(31, 30, 42), PackedInt32Array(43, 32, 33), PackedInt32Array(35, 34, 44), PackedInt32Array(45, 29, 15, 46, 47, 48), PackedInt32Array(9, 8, 49, 50), PackedInt32Array(51, 9, 50, 52), PackedInt32Array(5, 4, 53, 54), PackedInt32Array(55, 43, 33, 56, 19), PackedInt32Array(57, 58, 59, 60, 61, 62), PackedInt32Array(63, 64, 54, 65), PackedInt32Array(20, 66, 67, 16), PackedInt32Array(68, 69, 70, 51), PackedInt32Array(71, 72, 73, 74), PackedInt32Array(52, 75, 76, 77), PackedInt32Array(51, 52, 77), PackedInt32Array(51, 77, 78, 79), PackedInt32Array(80, 4, 3), PackedInt32Array(81, 80, 3, 74, 73), PackedInt32Array(24, 82, 83, 84, 22), PackedInt32Array(85, 22, 84), PackedInt32Array(85, 84, 86, 87), PackedInt32Array(88, 89, 90, 31, 91, 92), PackedInt32Array(47, 93, 48), PackedInt32Array(45, 48, 56, 33), PackedInt32Array(86, 94, 95, 96), PackedInt32Array(57, 97, 58), PackedInt32Array(56, 98, 19), PackedInt32Array(99, 100, 87), PackedInt32Array(101, 102, 103, 104, 105, 106), PackedInt32Array(41, 40, 107, 108, 109), PackedInt32Array(110, 111, 79, 78), PackedInt32Array(51, 79, 68), PackedInt32Array(112, 113, 114, 16, 67), PackedInt32Array(8, 13, 31, 90), PackedInt32Array(67, 106, 105, 112), PackedInt32Array(39, 10, 9), PackedInt32Array(17, 16, 115, 61), PackedInt32Array(116, 62, 61, 115, 96, 95), PackedInt32Array(87, 86, 96, 99), PackedInt32Array(117, 99, 96, 81), PackedInt32Array(31, 42, 91), PackedInt32Array(118, 109, 108), PackedInt32Array(119, 118, 108), PackedInt32Array(120, 88, 92, 121, 19, 18), PackedInt32Array(122, 119, 108), PackedInt32Array(123, 55, 19), PackedInt32Array(121, 123, 19), PackedInt32Array(65, 16, 114, 63), PackedInt32Array(65, 54, 53, 81), PackedInt32Array(35, 44, 124), PackedInt32Array(125, 126, 122, 108, 74), PackedInt32Array(96, 65, 81), PackedInt32Array(51, 70, 127, 117, 81), PackedInt32Array(35, 124, 128), PackedInt32Array(125, 35, 128, 126), PackedInt32Array(74, 108, 71), PackedInt32Array(81, 73, 51)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1300, -1503, -1323, 1486, 94, 1482, 97, 2248, 1086, 2256, 1059, 1469, 1070, -1510, 102, -1487)])
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l7mbp"]
 radius = 50.0
 
 [node name="MockupMap" type="Node2D" unique_id=1890274910]
 y_sort_enabled = true
+
+[node name="NavigationRegion - mapa" type="NavigationRegion2D" parent="." unique_id=1355966299]
+position = Vector2(249, -579)
+navigation_polygon = SubResource("NavigationPolygon_fdedp")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=1036346323]
+position = Vector2(890, 619)
+radius = 1.0
+vertices = PackedVector2Array(-755, 854, -374, 853, -373, 814, -763, 821)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="NavigationObstacle2D5" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=932407150]
+position = Vector2(890, 619)
+radius = 1.0
+vertices = PackedVector2Array(-2158, 209, -1764, 219, -1764, 186, -2158, 172)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="NavigationObstacle2D6" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=636671537]
+position = Vector2(1385, 626)
+radius = 1.0
+vertices = PackedVector2Array(-2158, 209, -1621, 208, -1622, 179, -2157, 176)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="NavigationObstacle2D7" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=1642527527]
+position = Vector2(2020, 625)
+radius = 1.0
+vertices = PackedVector2Array(-2158, 209, -1893, 211, -1890, 179, -2157, 176)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="NavigationObstacle2D8" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=974272419]
+position = Vector2(2024, 363)
+radius = 1.0
+vertices = PackedVector2Array(-2158, 209, -1893, 211, -1890, 179, -2157, 176)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="NavigationObstacle2D9" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=402897016]
+position = Vector2(1113, 369)
+radius = 1.0
+vertices = PackedVector2Array(-2158, 209, -1354, 212, -1358, 182, -2157, 176)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="NavigationObstacle2D2" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=36665868]
+position = Vector2(1407, 618)
+radius = 1.0
+vertices = PackedVector2Array(-757, 851, -378, 850, -377, 820, -758, 821)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="NavigationObstacle2D3" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=1309450023]
+position = Vector2(1407, 618)
+radius = 1.0
+vertices = PackedVector2Array(-1299, 1630, -1257, 1623, -1275, 58, -1310, 65)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="NavigationObstacle2D10" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=769002634]
+position = Vector2(1400, -1067)
+radius = 1.0
+vertices = PackedVector2Array(-1299, 1630, -1257, 1623, -1269, 590, -1311, 590)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="NavigationObstacle2D11" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=1871812117]
+position = Vector2(879, -1432)
+radius = 1.0
+vertices = PackedVector2Array(-1299, 1630, -1257, 1623, -1252, 963, -1293, 974)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="NavigationObstacle2D12" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=682173814]
+position = Vector2(879, -1432)
+radius = 1.0
+vertices = PackedVector2Array(-1497, 1626, -1499, 1596, -1892, 1591, -1896, 1626)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="NavigationObstacle2D13" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=1246681274]
+position = Vector2(879, -1432)
+radius = 1.0
+vertices = PackedVector2Array(-1398, 1628, -1394, 1596, -1256, 1596, -1253, 1628)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="NavigationObstacle2D14" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=433950006]
+position = Vector2(879, -1432)
+radius = 1.0
+vertices = PackedVector2Array(-1920, 1629, -1926, 972, -1897, 958, -1894, 1629)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="NavigationObstacle2D15" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=1412523149]
+position = Vector2(879, -1432)
+radius = 1.0
+vertices = PackedVector2Array(-234, 1112, -1923, 1115, -1926, 1072, -231, 1075)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="NavigationObstacle2D18" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=1442486684]
+position = Vector2(648, -1691)
+radius = 1.0
+vertices = PackedVector2Array(-7, 1121, -1923, 1115, -1926, 1072, -11, 1079)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="NavigationObstacle2D19" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=2049089258]
+position = Vector2(648, -1691)
+radius = 1.0
+vertices = PackedVector2Array(-1144, 1104, -1174, 1100, -1186, 227, -1144, 223)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="NavigationObstacle2D16" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=928165395]
+position = Vector2(879, -1432)
+radius = 1.0
+vertices = PackedVector2Array(-96, 1120, 168, 1120, 171, 1073, -96, 1079)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="NavigationObstacle2D17" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=20525825]
+position = Vector2(887, -1697)
+radius = 1.0
+vertices = PackedVector2Array(-96, 1120, 168, 1120, 171, 1073, -96, 1079)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="NavigationObstacle2D4" type="NavigationObstacle2D" parent="NavigationRegion - mapa" unique_id=617995724]
+position = Vector2(1407, 618)
+radius = 1.0
+vertices = PackedVector2Array(-1939, 874, -1904, 912, -1907, 52, -1951, 52)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="Obstacles" type="Node2D" parent="." unique_id=1444312928]
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=588165485]
 z_index = -10
@@ -29,12 +193,13 @@ tile_set = ExtResource("1_e7g3f")
 
 [node name="Blocks" type="TileMapLayer" parent="." unique_id=61418298]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAAAPH/AAAAAAUAAAACAPH/AAAAAAUAAAADAPH/AAAAAAUAAAAEAPH/AAAAAAUAAAAIAPH/AAAAAAUAAAAJAPH/AAAAAAUAAAAGAPH/AAAAAAUAAAAJAPP/AAAAAAUAAAAJAPT/AAAAAAUAAAAFAPX/AAAAAAUAAAAEAPX/AAAAAAUAAAADAPX/AAAAAAUAAAACAPX/AAAAAAUAAAABAPX/AAAAAAUAAAD///X/AAAAAAUAAAD///b/AAAAAAUAAAAAAPb/AAAAAAUAAAABAPb/AAAAAAUAAAACAPb/AAAAAAUAAAADAPb/AAAAAAUAAAAEAPb/AAAAAAUAAAAFAPb/AAAAAAUAAAD+//T/AAAAAAUAAAD+//P/AAAAAAUAAAD+//L/AAAAAAUAAAD+//X/AAAAAAUAAAAFAPr/AAAAAAUAAAAFAPv/AAAAAAUAAAAGAPv/AAAAAAUAAAAHAPv/AAAAAAUAAAAHAPr/AAAAAAUAAAAGAPr/AAAAAAUAAAAEAPr/AAAAAAUAAAAEAPv/AAAAAAUAAAAJAP3/AAAAAAUAAAAJAP7/AAAAAAUAAAAJAAAAAAAAAAUAAAAJAAIAAAAAAAUAAAAJAAMAAAAAAAUAAAAJAAQAAAAAAAUAAAAJAAUAAAAAAAUAAAADAAIAAAAAAAUAAAADAAMAAAAAAAUAAAADAAQAAAAAAAUAAAAJAAcAAAAAAAUAAAAJAAgAAAAAAAUAAAAJAAkAAAAAAAUAAAAJAAoAAAAAAAUAAAADAAoAAAAAAAUAAAADAAkAAAAAAAUAAAADAAgAAAAAAAUAAAAFAAsAAAAAAAUAAAD+/wQAAAAAAAUAAAD+/wUAAAAAAAUAAAD+/wYAAAAAAAUAAAD//wYAAAAAAAUAAAD//wUAAAAAAAUAAAD//wQAAAAAAAUAAAD//wIAAAAAAAUAAAD+/wIAAAAAAAUAAAACAAIAAAAAAAUAAAACAAQAAAAAAAUAAAACAAUAAAAAAAUAAAD4/wQAAAAAAAUAAAD4/wUAAAAAAAUAAAD4/wYAAAAAAAUAAAD5/wYAAAAAAAUAAAD5/wUAAAAAAAUAAAD5/wQAAAAAAAUAAAD9/wIAAAAAAAUAAAD9/wQAAAAAAAUAAAD9/wUAAAAAAAUAAAD4/wIAAAAAAAUAAAD6//3/AAAAAAUAAAD7//3/AAAAAAUAAAD7//7/AAAAAAUAAAD6//7/AAAAAAUAAAD8//3/AAAAAAUAAAD8//7/AAAAAAUAAAD+//7/AAAAAAUAAAACAPz/AAAAAAUAAAACAP3/AAAAAAUAAAACAP7/AAAAAAUAAAACAP//AAAAAAUAAAAAAPn/AAAAAAUAAAABAPn/AAAAAAUAAAD9//n/AAAAAAUAAAD+//n/AAAAAAUAAAA=")
+tile_map_data = PackedByteArray("AAAAAPH/AAAAAAUAAAACAPH/AAAAAAUAAAADAPH/AAAAAAUAAAAEAPH/AAAAAAUAAAAIAPH/AAAAAAUAAAAJAPH/AAAAAAUAAAAGAPH/AAAAAAUAAAAJAPP/AAAAAAUAAAAJAPT/AAAAAAUAAAAFAPX/AAAAAAUAAAAEAPX/AAAAAAUAAAADAPX/AAAAAAUAAAACAPX/AAAAAAUAAAABAPX/AAAAAAUAAAD///X/AAAAAAUAAAD///b/AAAAAAUAAAAAAPb/AAAAAAUAAAABAPb/AAAAAAUAAAACAPb/AAAAAAUAAAADAPb/AAAAAAUAAAAEAPb/AAAAAAUAAAAFAPb/AAAAAAUAAAD+//T/AAAAAAUAAAD+//P/AAAAAAUAAAD+//L/AAAAAAUAAAD+//X/AAAAAAUAAAAFAPr/AAAAAAUAAAAFAPv/AAAAAAUAAAAGAPv/AAAAAAUAAAAHAPv/AAAAAAUAAAAHAPr/AAAAAAUAAAAGAPr/AAAAAAUAAAAEAPr/AAAAAAUAAAAEAPv/AAAAAAUAAAAJAP3/AAAAAAUAAAAJAP7/AAAAAAUAAAAJAAAAAAAAAAUAAAAJAAIAAAAAAAUAAAAJAAMAAAAAAAUAAAAJAAQAAAAAAAUAAAAJAAUAAAAAAAUAAAADAAIAAAAAAAUAAAADAAMAAAAAAAUAAAADAAQAAAAAAAUAAAAJAAcAAAAAAAUAAAAJAAgAAAAAAAUAAAAJAAkAAAAAAAUAAAAJAAoAAAAAAAUAAAADAAoAAAAAAAUAAAADAAkAAAAAAAUAAAADAAgAAAAAAAUAAAAFAAsAAAAAAAUAAAD+/wQAAAAAAAUAAAD+/wUAAAAAAAUAAAD+/wYAAAAAAAUAAAD//wYAAAAAAAUAAAD//wUAAAAAAAUAAAD//wQAAAAAAAUAAAD+/wIAAAAAAAUAAAACAAIAAAAAAAUAAAACAAQAAAAAAAUAAAACAAUAAAAAAAUAAAD4/wQAAAAAAAUAAAD4/wUAAAAAAAUAAAD4/wYAAAAAAAUAAAD5/wYAAAAAAAUAAAD5/wUAAAAAAAUAAAD5/wQAAAAAAAUAAAD9/wIAAAAAAAUAAAD9/wQAAAAAAAUAAAD9/wUAAAAAAAUAAAD4/wIAAAAAAAUAAAD6//3/AAAAAAUAAAD7//3/AAAAAAUAAAD7//7/AAAAAAUAAAD6//7/AAAAAAUAAAD8//3/AAAAAAUAAAD8//7/AAAAAAUAAAD+//7/AAAAAAUAAAACAPz/AAAAAAUAAAACAP3/AAAAAAUAAAACAP7/AAAAAAUAAAACAP//AAAAAAUAAAAAAPn/AAAAAAUAAAABAPn/AAAAAAUAAAD9//n/AAAAAAUAAAD+//n/AAAAAAUAAAD//wIAAAAAAAUAAAA=")
 tile_set = ExtResource("1_e7g3f")
 
 [node name="WallTops" type="TileMapLayer" parent="." unique_id=1622874426]
 light_mask = 2
 z_index = 10
+position = Vector2(0, -1)
 tile_map_data = PackedByteArray("AAD4/+//AAACAAEAAAD5/+//AAACAAEAAAD6/+//AAACAAEAAAD7/+//AAACAAEAAAD8/+//AAACAAEAAAD9/+//AAACAAEAAAD+/+//AAACAAEAAAD//+//AAACAAEAAAAAAO//AAACAAEAAAABAO//AAACAAEAAAACAO//AAACAAEAAAADAO//AAACAAEAAAAEAO//AAACAAEAAAAFAO//AAACAAEAAAAGAO//AAACAAEAAAAHAO//AAACAAEAAAAIAO//AAACAAEAAAAJAO//AAACAAEAAAD6//X/AAACAAEAAAD7//X/AAACAAEAAAD8//X/AAACAAEAAAD9//X/AAABAAEAAAD+//X/AAACAAEAAAD///X/AAACAAEAAAAAAPX/AAACAAEAAAABAPX/AAACAAEAAAACAPX/AAACAAEAAAADAPX/AAACAAEAAAAEAPX/AAACAAEAAAAFAPX/AAACAAEAAAAGAPX/AAACAAEAAAAIAPX/AAACAAEAAAAJAPX/AAACAAEAAAD4//X/AAACAAEAAAD3//D/AAADAAEAAAD3//H/AAADAAEAAAD3//L/AAADAAEAAAD3//P/AAADAAEAAAD3//T/AAADAAEAAAD3//X/AAADAAEAAAD3//b/AAADAAEAAAD3//f/AAADAAEAAAD3//j/AAADAAEAAAD3//n/AAADAAEAAAD3//r/AAADAAEAAAD3//v/AAADAAEAAAD3//z/AAADAAEAAAD3//3/AAADAAEAAAD3//7/AAADAAEAAAD3////AAADAAEAAAD3/wAAAAADAAEAAAD3/wEAAAADAAEAAAD3/wIAAAADAAEAAAD3/wMAAAADAAEAAAD3/wQAAAADAAEAAAD3/wUAAAADAAEAAAD4/wUAAAACAAEAAAD5/wUAAAACAAEAAAD6/wUAAAACAAEAAAD7/wUAAAACAAEAAAD8/wUAAAACAAEAAAD9/wUAAAABAAEAAAD+/wUAAAACAAEAAAD//wUAAAACAAEAAAAAAAUAAAACAAEAAAABAAUAAAACAAEAAAACAAUAAAABAAEAAAADAAUAAAACAAEAAAAEAAUAAAACAAEAAAAFAAUAAAACAAEAAAAHAAUAAAACAAEAAAAIAAUAAAACAAEAAAAJAAUAAAACAAEAAAADAAsAAAACAAEAAAAEAAsAAAACAAEAAAAFAAsAAAACAAEAAAAGAAsAAAACAAEAAAAHAAsAAAACAAEAAAAIAAsAAAACAAEAAAAJAAsAAAACAAEAAAAKAPD/AAACAAAAAAAKAPH/AAACAAAAAAAKAPL/AAACAAAAAAAKAPP/AAACAAAAAAAKAPT/AAACAAAAAAAKAPX/AAACAAAAAAAKAPb/AAACAAAAAAAKAPf/AAACAAAAAAAKAPj/AAACAAAAAAAKAPn/AAACAAAAAAAKAPr/AAACAAAAAAAKAPv/AAACAAAAAAAKAPz/AAACAAAAAAAKAP3/AAACAAAAAAAKAP7/AAACAAAAAAAKAP//AAACAAAAAAAKAAAAAAACAAAAAAAKAAEAAAACAAAAAAAKAAIAAAACAAAAAAAKAAMAAAACAAAAAAAKAAQAAAACAAAAAAAKAAUAAAACAAAAAAAKAAYAAAACAAAAAAAKAAcAAAACAAAAAAAKAAgAAAACAAAAAAAKAAkAAAACAAAAAAAKAAoAAAACAAAAAAAKAAsAAAACAAAAAAACAAsAAAADAAEAAAACAAoAAAADAAEAAAACAAkAAAADAAEAAAACAAgAAAADAAEAAAACAAcAAAADAAEAAAACAAYAAAADAAEAAAACAAQAAAADAAEAAAACAAMAAAADAAEAAAACAAIAAAADAAEAAAACAAEAAAADAAEAAAACAAAAAAACAAEAAAABAAAAAAACAAEAAAAAAAAAAAACAAEAAAD//wAAAAACAAEAAAD+/wAAAAACAAEAAAD9/wAAAAACAAEAAAD8/wAAAAACAAEAAAD7/wAAAAACAAEAAAD6/wAAAAACAAEAAAD5/wAAAAACAAEAAAD4/wAAAAACAAEAAAACAP7/AAABAAEAAAABAP7/AAACAAEAAAAAAP7/AAACAAEAAAD///7/AAACAAEAAAD+//7/AAACAAEAAAD9//7/AAACAAEAAAD8//7/AAACAAEAAAD7//7/AAACAAEAAAD6//7/AAACAAEAAAD+//v/AAABAAEAAAD9//v/AAACAAEAAAD8//v/AAACAAEAAAD7//v/AAACAAEAAAD6//v/AAACAAEAAAAJAPf/AAACAAEAAAAIAPf/AAACAAEAAAAGAPf/AAACAAEAAAAFAPf/AAACAAEAAAAEAPf/AAACAAEAAAADAPf/AAACAAEAAAACAPf/AAACAAEAAAABAPf/AAACAAEAAAAAAPf/AAACAAEAAAD///f/AAACAAEAAAD+//f/AAACAAEAAAD9//f/AAACAAEAAAD8//f/AAACAAEAAAD7//f/AAACAAEAAAD6//f/AAACAAEAAAACAP3/AAADAAEAAAACAPz/AAADAAEAAAACAPv/AAADAAEAAAACAPr/AAADAAEAAAACAPn/AAADAAEAAAACAPj/AAADAAEAAAD5//7/AAADAAEAAAD5//3/AAADAAEAAAD5//z/AAADAAEAAAD5//v/AAADAAEAAAD5//r/AAADAAEAAAD5//n/AAADAAEAAAD5//j/AAADAAEAAAD5//f/AAAFAAAAAAD+//r/AAADAAEAAAD+//n/AAADAAEAAAD+//j/AAADAAEAAAD9/wIAAAADAAEAAAD9/wMAAAADAAEAAAD9/wQAAAADAAEAAAD9/wEAAAADAAEAAAD5//X/AAACAAEAAAD9//T/AAADAAEAAAD9//P/AAADAAEAAAD9//L/AAADAAEAAAD9//H/AAADAAEAAAD9//D/AAADAAEAAAA=")
 tile_set = ExtResource("1_e7g3f")
 
@@ -57,6 +222,10 @@ color = Color(0, 0, 0, 1)
 [node name="RuntimeEnabler" type="Node" parent="CanvasModulate" unique_id=1698801049]
 script = ExtResource("3_a4pk8")
 metadata/_custom_type_script = "uid://b5jr5qc0lxppc"
+
+[node name="Monstro" parent="." unique_id=1310309185 node_paths=PackedStringArray("target") instance=ExtResource("monstro4_0w2j5")]
+position = Vector2(797, -57)
+target = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=250710723 node_paths=PackedStringArray("default_ui")]
 process_mode = 3
