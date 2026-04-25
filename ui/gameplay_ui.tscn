@@ -1,11 +1,25 @@
 [gd_scene format=3 uid="uid://dmmdm2tayg8mw"]
 
 [ext_resource type="Script" uid="uid://dg5dyblh2s7xd" path="res://ui/gameplay_ui.gd" id="1_7fgxj"]
+[ext_resource type="Texture2D" uid="uid://dcyrwf7xdkns3" path="res://mockup/mockup_mascot.png" id="2_671ak"]
+[ext_resource type="Script" uid="uid://dwtfo8h87ttty" path="res://ui/speech/eggwatch_speech.gd" id="3_7e4rd"]
+[ext_resource type="AudioStream" uid="uid://cohfta0h04k68" path="res://ui/speech/eggwatch_voice.mp3" id="4_w5py3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hirpm"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.27450982, 0.7254902, 0.3019608, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ae3a4"]
 bg_color = Color(0.12156863, 0.48235294, 0.12156863, 1)
 
-[node name="GameplayUI" type="Control" unique_id=1269869551]
+[node name="GameplayUI" type="Control" unique_id=1269869551 node_paths=PackedStringArray("bar")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,41 +31,7 @@ offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7fgxj")
-
-[node name="BatteryBar1" type="ProgressBar" parent="." unique_id=17593348]
-layout_mode = 1
-offset_left = 4.0
-offset_top = 3.0
-offset_right = 55.0
-offset_bottom = 95.0
-theme_override_colors/font_color = Color(0.7213019, 0.721302, 0.72130287, 1)
-theme_override_styles/fill = SubResource("StyleBoxFlat_ae3a4")
-rounded = true
-fill_mode = 3
-
-[node name="BatteryBar2" type="ProgressBar" parent="." unique_id=2084650989]
-layout_mode = 1
-offset_left = 63.0
-offset_top = 3.0
-offset_right = 114.0
-offset_bottom = 95.0
-theme_override_colors/font_color = Color(0.7213019, 0.721302, 0.72130287, 1)
-theme_override_styles/fill = SubResource("StyleBoxFlat_ae3a4")
-value = 100.0
-rounded = true
-fill_mode = 3
-
-[node name="BatteryBar3" type="ProgressBar" parent="." unique_id=2098202673]
-layout_mode = 1
-offset_left = 122.0
-offset_top = 4.0
-offset_right = 173.0
-offset_bottom = 96.0
-theme_override_colors/font_color = Color(0.7213019, 0.721302, 0.72130287, 1)
-theme_override_styles/fill = SubResource("StyleBoxFlat_ae3a4")
-value = 100.0
-rounded = true
-fill_mode = 3
+bar = [NodePath("EggwatchDisplay/Control/BatteryBar3"), NodePath("EggwatchDisplay/Control/BatteryBar2"), NodePath("EggwatchDisplay/Control/BatteryBar1")]
 
 [node name="RechargeBar" type="ProgressBar" parent="." unique_id=543826916]
 layout_mode = 1
@@ -67,4 +47,89 @@ offset_bottom = 105.0
 grow_horizontal = 2
 grow_vertical = 2
 max_value = 2.0
+show_percentage = false
+
+[node name="EggwatchDisplay" type="TextureRect" parent="." unique_id=1268261578]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 115.0
+offset_top = -452.0
+offset_right = 415.0
+offset_bottom = -92.0
+grow_vertical = 0
+texture = ExtResource("2_671ak")
+
+[node name="EggwatchSpeech" type="RichTextLabel" parent="EggwatchDisplay" unique_id=1870333564]
+custom_minimum_size = Vector2(400, 48)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_top = -40.0
+offset_right = 180.0
+offset_bottom = 15.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_hirpm")
+bbcode_enabled = true
+text = "PLACEHOLDER TEXT"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+script = ExtResource("3_7e4rd")
+speech_lines = Array[String](["I AM SPEAKING PLACEHOLDER TEXT", "Lorem ipsum dolor sit amet", "Replace this with real text"])
+reveal_speed = 0.325
+audio_stream = ExtResource("4_w5py3")
+
+[node name="Control" type="Control" parent="EggwatchDisplay" unique_id=167874359]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 54.0
+offset_right = 20.0
+offset_bottom = 94.0
+grow_horizontal = 2
+scale = Vector2(0.6, 0.6)
+
+[node name="BatteryBar1" type="ProgressBar" parent="EggwatchDisplay/Control" unique_id=17593348]
+layout_mode = 1
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 55.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.7213019, 0.721302, 0.72130287, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_ae3a4")
+rounded = true
+fill_mode = 3
+show_percentage = false
+
+[node name="BatteryBar2" type="ProgressBar" parent="EggwatchDisplay/Control" unique_id=2084650989]
+layout_mode = 1
+offset_left = 63.0
+offset_top = 3.0
+offset_right = 114.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.7213019, 0.721302, 0.72130287, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_ae3a4")
+value = 100.0
+rounded = true
+fill_mode = 3
+show_percentage = false
+
+[node name="BatteryBar3" type="ProgressBar" parent="EggwatchDisplay/Control" unique_id=2098202673]
+layout_mode = 1
+offset_left = 122.0
+offset_top = 4.0
+offset_right = 173.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.7213019, 0.721302, 0.72130287, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_ae3a4")
+value = 100.0
+rounded = true
+fill_mode = 3
 show_percentage = false

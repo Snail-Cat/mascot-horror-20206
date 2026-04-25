@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://b5jr5qc0lxppc" path="res://util/runtime_enabler.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://cc4fxn06eev2b" path="res://player/interaction_detector.gd" id="4_yw30f"]
 [ext_resource type="Script" uid="uid://inme7x5jjr38" path="res://player/battery.gd" id="5_qjkh3"]
+[ext_resource type="AudioStream" uid="uid://ddxjpfhsmremb" path="res://player/low_battery.wav" id="6_boad6"]
+[ext_resource type="Script" uid="uid://du8qu2wuirakh" path="res://player/low_battery_audio.gd" id="7_rgyib"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g1dw6"]
 radius = 8.0
@@ -44,6 +46,13 @@ light_mask = 4
 position = Vector2(-6, -49)
 texture = ExtResource("2_g1dw6")
 
+[node name="PointLight2D" type="PointLight2D" parent="Sprite" unique_id=1546439123]
+color = Color(0.8992584, 0.8992584, 0.8992584, 1)
+energy = 0.67
+blend_mode = 2
+range_item_cull_mask = 2
+texture = ExtResource("2_g1dw6")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=765628888]
 position = Vector2(0, -4)
 rotation = 1.5707964
@@ -76,3 +85,13 @@ shape = SubResource("CircleShape2D_qjkh3")
 [node name="Battery" type="Node" parent="." unique_id=737240493 node_paths=PackedStringArray("point_light")]
 script = ExtResource("5_qjkh3")
 point_light = NodePath("../MainLight")
+
+[node name="LowBatteryAudio" type="AudioStreamPlayer" parent="Battery" unique_id=906385151 node_paths=PackedStringArray("battery", "timer")]
+stream = ExtResource("6_boad6")
+script = ExtResource("7_rgyib")
+battery = NodePath("..")
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="Battery/LowBatteryAudio" unique_id=521744681]
+wait_time = 5.0
+autostart = true
