@@ -63,14 +63,13 @@ process_mode = 3
 script = ExtResource("4_3j2e5")
 default_ui = NodePath("GameplayUI")
 
-[node name="GameplayUI" parent="CanvasLayer" unique_id=1269869551 node_paths=PackedStringArray("battery", "bar") instance=ExtResource("4_0w2j5")]
+[node name="GameplayUI" parent="CanvasLayer" unique_id=1269869551 node_paths=PackedStringArray("battery") instance=ExtResource("4_0w2j5")]
 process_mode = 1
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
 battery = NodePath("../../Player/Battery")
-bar = [NodePath("BatteryBar3"), NodePath("BatteryBar2"), NodePath("BatteryBar1")]
 
 [node name="PauseUI" parent="CanvasLayer" unique_id=402355377 instance=ExtResource("6_f0hdj")]
 process_mode = 3
