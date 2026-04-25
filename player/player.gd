@@ -61,9 +61,12 @@ func _process(_delta):
 		
 		_can_move = true
 		_can_interact = true
-
+	
 	if Input.is_action_just_released("recharge_battery"):
 		recharge_completed = false
+	
+	if Input.is_action_pressed("death_test"):
+		GameManager.game_over()
 
 
 func _on_timeline_started():
