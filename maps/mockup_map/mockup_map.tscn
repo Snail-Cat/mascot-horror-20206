@@ -72,6 +72,12 @@ offset_bottom = 0.0
 battery = NodePath("../../Player/Battery")
 bar = [NodePath("BatteryBar3"), NodePath("BatteryBar2"), NodePath("BatteryBar1")]
 
+[node name="BatteryBar1" parent="CanvasLayer/GameplayUI" index="0" unique_id=17593348]
+value = 100.0
+
+[node name="RechargeBar" parent="CanvasLayer/GameplayUI" index="3" unique_id=543826916]
+visible = false
+
 [node name="PauseUI" parent="CanvasLayer" unique_id=402355377 instance=ExtResource("6_f0hdj")]
 process_mode = 3
 visible = false

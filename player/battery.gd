@@ -38,8 +38,8 @@ func _set_current_level():
 	if current_level_duration < 0:
 		current_level -= 1 # diminui o nivel
 		
-		#if current_level < 0	# checa se a luz acabou
-			#death function (a ser criada)
+		if current_level < 0:# checa se a luz acabou
+			GameManager.game_over()
 		
 		current_level_duration = 100.0 # reinicia o timer
 	
