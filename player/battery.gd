@@ -2,13 +2,13 @@ class_name Battery
 extends Node
 
 @export var point_light: PointLight2D
+@export var duration_modifier1 := 6
+@export var duration_modifier2 := 4
+@export var duration_modifier3 := 3
 
 var battery_count := 1 # bateria atual
 var max_battery_count := 3 # bateria máxima
 var current_level := 2
-var duration_modifier1 := 6
-var duration_modifier2 := 4
-var duration_modifier3 := 3
 var current_level_duration := 100.0
 var light_scale_lv2 := 1.0
 var light_scale_lv1 := 0.75
@@ -63,3 +63,7 @@ func _set_current_level():
 	
 		tween = get_tree().create_tween() # criando tree do tween
 		tween.tween_property(point_light, "texture_scale", light_scale_lv0, 1.0) # tween da luz nivel 0
+
+
+func is_low_battery():
+	return current_level == 0
