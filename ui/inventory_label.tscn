@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ckcfpjp82rovv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7wvpk"]
+font_size = 48
+
+[node name="InventoryLabel" type="Label" unique_id=1530720410]
+custom_minimum_size = Vector2(520, 0)
+text = "TEST ITEM x5"
+label_settings = SubResource("LabelSettings_7wvpk")

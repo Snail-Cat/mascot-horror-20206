@@ -4,10 +4,24 @@
 [ext_resource type="Texture2D" uid="uid://b1fmpigo8tbpi" path="res://mockup/mockup_player.png" id="2_g1dw6"]
 [ext_resource type="Script" uid="uid://b5jr5qc0lxppc" path="res://util/runtime_enabler.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://cc4fxn06eev2b" path="res://player/interaction_detector.gd" id="4_yw30f"]
+[ext_resource type="Script" uid="uid://inme7x5jjr38" path="res://player/battery.gd" id="5_qjkh3"]
+[ext_resource type="AudioStream" uid="uid://ddxjpfhsmremb" path="res://player/low_battery.wav" id="6_boad6"]
+[ext_resource type="Script" uid="uid://du8qu2wuirakh" path="res://player/low_battery_audio.gd" id="7_rgyib"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g1dw6"]
 radius = 8.0
 height = 28.0
+
+[sub_resource type="Gradient" id="Gradient_qjkh3"]
+offsets = PackedFloat32Array(0, 0.033834588, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.35555553, 0.35555553, 0.35555553, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g6k8r"]
+gradient = SubResource("Gradient_qjkh3")
+width = 1920
+height = 1920
+fill = 1
+fill_from = Vector2(0.49530515, 0.49530515)
 
 [sub_resource type="Gradient" id="Gradient_rkbax"]
 offsets = PackedFloat32Array(0, 0.24096386, 0.67469877)
@@ -37,14 +51,20 @@ position = Vector2(0, -4)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_g1dw6")
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=923012669]
+[node name="SecondaryLight" type="PointLight2D" parent="." unique_id=859384074]
+energy = 0.35
+range_item_cull_mask = 3
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_g6k8r")
+
+[node name="MainLight" type="PointLight2D" parent="." unique_id=923012669]
 visible = false
 position = Vector2(0, -7)
 range_item_cull_mask = 7
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_g1dw6")
 
-[node name="RuntimeEnabler" type="Node" parent="PointLight2D" unique_id=991829283]
+[node name="RuntimeEnabler" type="Node" parent="MainLight" unique_id=991829283]
 script = ExtResource("3_g1dw6")
 metadata/_custom_type_script = "uid://b5jr5qc0lxppc"
 
@@ -54,3 +74,17 @@ script = ExtResource("4_yw30f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionDetector" unique_id=49913016]
 position = Vector2(0, -25)
 shape = SubResource("CircleShape2D_qjkh3")
+
+[node name="Battery" type="Node" parent="." unique_id=737240493 node_paths=PackedStringArray("point_light")]
+script = ExtResource("5_qjkh3")
+point_light = NodePath("../MainLight")
+
+[node name="LowBatteryAudio" type="AudioStreamPlayer" parent="Battery" unique_id=906385151 node_paths=PackedStringArray("battery", "timer")]
+stream = ExtResource("6_boad6")
+script = ExtResource("7_rgyib")
+battery = NodePath("..")
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="Battery/LowBatteryAudio" unique_id=521744681]
+wait_time = 5.0
+autostart = true
