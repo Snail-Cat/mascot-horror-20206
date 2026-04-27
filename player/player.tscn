@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://inme7x5jjr38" path="res://player/battery.gd" id="5_qjkh3"]
 [ext_resource type="AudioStream" uid="uid://ddxjpfhsmremb" path="res://player/low_battery.wav" id="6_boad6"]
 [ext_resource type="Script" uid="uid://du8qu2wuirakh" path="res://player/low_battery_audio.gd" id="7_rgyib"]
+[ext_resource type="AudioStream" uid="uid://cwcj3xvuln0hc" path="res://player/battery_recharge.wav" id="8_rgyib"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g1dw6"]
 radius = 8.0
@@ -37,9 +38,10 @@ fill_from = Vector2(0.5, 0.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_qjkh3"]
 radius = 73.0
 
-[node name="Player" type="CharacterBody2D" unique_id=156382088]
+[node name="Player" type="CharacterBody2D" unique_id=156382088 node_paths=PackedStringArray("recharge_audio")]
 y_sort_enabled = true
 script = ExtResource("1_rkbax")
+recharge_audio = NodePath("ReloadAudio")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1603613327]
 light_mask = 4
@@ -95,3 +97,6 @@ timer = NodePath("Timer")
 [node name="Timer" type="Timer" parent="Battery/LowBatteryAudio" unique_id=521744681]
 wait_time = 5.0
 autostart = true
+
+[node name="ReloadAudio" type="AudioStreamPlayer" parent="." unique_id=845499018]
+stream = ExtResource("8_rgyib")
