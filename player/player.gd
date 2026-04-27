@@ -5,10 +5,12 @@ extends CharacterBody2D
 @export var _speed := 300
 @export var battery: Battery
 @export var recharge_bar: ProgressBar
+@export var recharge_audio: AudioStreamPlayer
+@export var recharge_duration := 2.0
 var _flipped := false
 var _can_move := true
 var _can_interact := true
-var time_pressed := 0.0 
+var time_pressed := 0.0
 var recharge_completed := false
 @onready var _sprite := $Sprite as Sprite2D
 @onready var _interaction_detector := $InteractionDetector as InteractionDetector
@@ -41,7 +43,9 @@ func _process(_delta):
 		_interaction_detector.try_interaction()
 	
 	if Input.is_action_pressed("recharge_battery") and !recharge_completed: # and battery_count > 0:
-		var max_time_pressed := 2.0
+		if !recharge_audio.playing:
+			recharge_audio.play()
+		
 		
 		_can_move = false
 		_can_interact = false
@@ -50,7 +54,7 @@ func _process(_delta):
 		recharge_bar.value = time_pressed # pode ser colocado no control depois
 		time_pressed += _delta
 		
-		if time_pressed > max_time_pressed:
+		if time_pressed > recharge_duration:
 			battery.current_level = 2
 			battery.current_level_duration = 100
 			time_pressed = 0
@@ -64,6 +68,7 @@ func _process(_delta):
 	
 	if Input.is_action_just_released("recharge_battery"):
 		recharge_completed = false
+		recharge_audio.stop()
 	
 	if Input.is_action_pressed("death_test"):
 		GameManager.game_over()
