@@ -29,6 +29,7 @@ GameManager="*uid://ony54a1c5afg"
 
 directories/dch_directory={}
 directories/dtl_directory={
+"battery_collect": "res://dialogic/timelines/battery_collect.dtl",
 "hello_world": "res://test/hello_world.dtl",
 "remove_item_test": "res://test/remove_item_test.dtl"
 }
