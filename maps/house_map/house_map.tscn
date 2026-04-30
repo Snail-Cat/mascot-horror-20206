@@ -75,27 +75,33 @@ texture_region_size = Vector2i(100, 100)
 1:0/size_in_atlas = Vector2i(1, 2)
 1:0/0 = 0
 1:0/0/texture_origin = Vector2i(0, 50)
+1:0/0/y_sort_origin = 35
 1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_758a5")
 4:0/size_in_atlas = Vector2i(2, 2)
 4:0/0 = 0
 4:0/0/texture_origin = Vector2i(-50, 50)
+4:0/0/y_sort_origin = 35
 4:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_u8ttm")
 4:0/0/occlusion_layer_0/polygon_1/polygon = SubResource("OccluderPolygon2D_m1ena")
 4:2/size_in_atlas = Vector2i(2, 2)
 4:2/0 = 0
 4:2/0/texture_origin = Vector2i(-50, 50)
+4:2/0/y_sort_origin = 35
 4:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6nysl")
 4:4/size_in_atlas = Vector2i(2, 2)
 4:4/0 = 0
 4:4/0/texture_origin = Vector2i(-50, 50)
+4:4/0/y_sort_origin = 35
 4:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_8v1h5")
 2:4/size_in_atlas = Vector2i(2, 2)
 2:4/0 = 0
 2:4/0/texture_origin = Vector2i(-50, 50)
+2:4/0/y_sort_origin = 35
 2:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_1hw6i")
 0:4/size_in_atlas = Vector2i(2, 2)
 0:4/0 = 0
 0:4/0/texture_origin = Vector2i(-50, 50)
+0:4/0/y_sort_origin = 35
 0:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_5n32l")
 3:1/0 = 0
 
@@ -570,17 +576,10 @@ default_ui = NodePath("GameplayUI")
 
 [node name="GameplayUI" parent="CanvasLayer" unique_id=1269869551 node_paths=PackedStringArray("battery") instance=ExtResource("6_2it02")]
 process_mode = 1
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
 battery = NodePath("../../Player/Battery")
 
 [node name="RechargeBar" parent="CanvasLayer/GameplayUI" index="0" unique_id=543826916]
 visible = false
-
-[node name="BatteryBar1" parent="CanvasLayer/GameplayUI/EggwatchDisplay/Control" parent_id_path=PackedInt32Array(1269869551, 167874359) index="0" unique_id=17593348]
-value = 100.0
 
 [node name="PauseUI" parent="CanvasLayer" unique_id=402355377 instance=ExtResource("7_t1b3n")]
 process_mode = 3
