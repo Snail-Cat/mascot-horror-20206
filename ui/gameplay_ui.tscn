@@ -19,6 +19,9 @@ corner_radius_bottom_left = 12
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ae3a4"]
 bg_color = Color(0.12156863, 0.48235294, 0.12156863, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5py3"]
+bg_color = Color(0.15487596, 0.154876, 0.1548759, 0.3764706)
+
 [node name="GameplayUI" type="Control" unique_id=1269869551 node_paths=PackedStringArray("bar")]
 layout_mode = 3
 anchors_preset = 15
@@ -133,3 +136,22 @@ value = 100.0
 rounded = true
 fill_mode = 3
 show_percentage = false
+
+[node name="InteractButton" type="Label" parent="." unique_id=1428116200]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -157.0
+offset_right = 33.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_w5py3")
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
