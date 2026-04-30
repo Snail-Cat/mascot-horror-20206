@@ -2,8 +2,8 @@ class_name InteractionDetector
 extends Area2D
 ## Classe responsável por detectar nodes que o jogador pode interagir no mapa
 
-@export var interact_button : Label
-var _currently_interacting :Array[Interactable] = []
+@export var interact_button: Label
+var _currently_interacting: Array[Interactable] = []
 
 func _ready():
 	area_entered.connect(_on_area_entered)
@@ -16,7 +16,7 @@ func _on_area_entered(area: Area2D):
 
 	_currently_interacting.append(area as Interactable)
 
-	interact_button.visible = true
+	_update_interact_button()
 
 
 func _on_area_exited(area: Area2D):
@@ -25,7 +25,7 @@ func _on_area_exited(area: Area2D):
 	
 	_currently_interacting.erase(area)
 	
-	interact_button.visible = false
+	_update_interact_button()
 
 
 func try_interaction():
@@ -33,3 +33,7 @@ func try_interaction():
 		return
 	
 	_currently_interacting.back().interact()
+
+
+func _update_interact_button():
+	interact_button.visible = !_currently_interacting.is_empty()
