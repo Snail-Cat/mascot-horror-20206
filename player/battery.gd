@@ -6,7 +6,6 @@ extends Node
 @export var duration_modifier2 := 4
 @export var duration_modifier3 := 3
 
-var battery_count := 1 # bateria atual
 var max_battery_count := 3 # bateria máxima
 var current_level := 2
 var current_level_duration := 100.0
@@ -25,11 +24,6 @@ func _process(delta: float) -> void:
 	else:
 		current_level_duration -= delta * duration_modifier3
 		
-	# possível método de adicionar bateria (precisaria adicionar variável bateria máxima e 
-	# fazer alguns reajustes)
-	# if _battery_get()  
-		# current_level_duration += battery_value
-	
 	_set_current_level()
 
 
