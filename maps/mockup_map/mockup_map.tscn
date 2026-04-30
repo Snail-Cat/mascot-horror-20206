@@ -268,7 +268,7 @@ pause_button = NodePath("../CanvasLayer/PauseUI/Button")
 [node name="TimelinetInteractable" type="Area2D" parent="." unique_id=1862463479]
 position = Vector2(312, 407)
 script = ExtResource("5_fdedp")
-timeline_name = "old_boombox"
+timeline_name = "glitter_drawing"
 metadata/_custom_type_script = "uid://35dh8yuu4xlt"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TimelinetInteractable" unique_id=3497267]

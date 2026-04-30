@@ -65,7 +65,7 @@ directories/dtl_directory={
 "oven": "res://dialogic/timelines/kitchen/oven.dtl",
 "photo_album": "res://dialogic/timelines/grandparents_bedroom/photo_album.dtl",
 "radio": "res://dialogic/timelines/grandparents_bedroom/radio.dtl",
-"red_flower": "res://dialogic/timelines/entrance/red_flower.dtl",
+"red_flower": "res://dialogic/timelines/entrance/red_flower_entrance.dtl",
 "red_flower_bathroom": "res://dialogic/timelines/bathroom/red_flower_bathroom.dtl",
 "red_flower_grandparentsbedroom": "res://dialogic/timelines/grandparents_bedroom/red_flower_grandparentsbedroom.dtl",
 "remote_controller": "res://dialogic/timelines/dinner_room/remote_controller.dtl",
