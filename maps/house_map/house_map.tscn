@@ -571,8 +571,13 @@ target = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=250710723 node_paths=PackedStringArray("default_ui")]
 process_mode = 3
+visible = false
 script = ExtResource("5_sl6ml")
 default_ui = NodePath("GameplayUI")
+
+[node name="RuntimeEnabler" type="Node" parent="CanvasLayer" unique_id=1974868719]
+script = ExtResource("3_wyhsf")
+metadata/_custom_type_script = "uid://b5jr5qc0lxppc"
 
 [node name="GameplayUI" parent="CanvasLayer" unique_id=1269869551 node_paths=PackedStringArray("battery") instance=ExtResource("6_2it02")]
 process_mode = 1
