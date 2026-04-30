@@ -208,6 +208,9 @@ position = Vector2(97, 496)
 battery = NodePath("Battery")
 recharge_bar = NodePath("../CanvasLayer/GameplayUI/RechargeBar")
 
+[node name="InteractionDetector" parent="Player" index="4" unique_id=13955611 node_paths=PackedStringArray("interact_button")]
+interact_button = NodePath("../../CanvasLayer/GameplayUI/InteractButton")
+
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=317658340]
 position = Vector2(0, -55.345)
 zoom = Vector2(1.1, 1.1)
